@@ -50,7 +50,7 @@ int main()
          char winner = checkWinner(spaces, winMap);
          if (winner != EMPTY)
          {
-            
+            winner == player ? std::cout << "You won!\n" : std::cout << "Computer won!\n";
             running = false;
             break;
          }
@@ -155,10 +155,11 @@ void computerMove(char *spaces, char computer)
    }
 }
 
-char checkWinner(char *spaces, char player, char computer, std::vector<std::array<int, 3>> winMap)
+char checkWinner(char *spaces, std::vector<std::array<int, 3>> winMap)
 {
    for (std::array<int, 3> i : winMap)
    {
+      //if space is not empty and 
       if (spaces[i[0]] != EMPTY && spaces[i[0]] == spaces[i[1]] && spaces[i[0]] == spaces[i[2]])
       {         
          return spaces[i[0]];
